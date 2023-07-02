@@ -10,7 +10,7 @@ async function auth(req: Request, res: Response, next: NextFunction) {
     if (!accessToken) return res.sendStatus(StatusCodes.UNAUTHORIZED);
 
     try {
-        jwt.verify(accessToken.split(' ')[1], process.env.TOKEN_SECRET as string) as JwtPayload;
+        jwt.verify(accessToken.split(' ')[1], process.env.JWT_SECRET as string) as JwtPayload;
 
         return next();
     } catch (e: any) {
