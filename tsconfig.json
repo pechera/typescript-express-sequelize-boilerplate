@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "target": "es2022",
+        "lib": ["ES5", "ES6", "ES2022"],
+        "module": "NodeNext",
+        "noImplicitAny": true,
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "inlineSourceMap": true,
+        "removeComments": true,
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src",
+        "outDir": "./build",
+        "skipLibCheck": true
+    },
+    "ts-node": {
+        "esm": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "build"],
+    "lib": ["ESNext", "ES2022"]
+}
