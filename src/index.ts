@@ -10,11 +10,7 @@ dotenv.config();
 
 import sequelize from './config/sequelize.config.js';
 
-(async () => {
-    await sequelize.authenticate();
-    // await sequelize.sync();
-    console.log('DB connected');
-})();
+sequelize.authenticate().then(() => console.log('DB connected'));
 
 const app: Application = express();
 
@@ -32,5 +28,6 @@ app.use('/api', routes);
 const server = app.listen(process.env.PORT);
 
 server.on('close', (error: Error | undefined) => {
+    sequelize.close();
     process.exit(error ? 1 : 0);
 });
